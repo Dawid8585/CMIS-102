@@ -1,57 +1,23 @@
-# Input NumHoursWorked as float
-# Input WeeklySales as float
-# Commision = 20% of WeeklySales 
-# HourlyPay = 16 
-# Totalpay = NumHoursWorked  *  + Commision
-# Output”Total hours worked = NumHoursWorked “
-# Output”Total commision = Commision “
-# Output”Total pay for the week = Totalpay“
-# Output Does user want to enter new calculation Yes No
-# If No stop
-# Else go back to beginning 
 
-play = True
-
-while play:
-  while True: 
-    try:
+while True: 
+  try:
     
 
-      #User enters inputs of hours worked and sales #'s.
-      NumHoursWorked  = float(input("Enter weekly sales:"))
-      WeeklySales  = float(input("Enter weekly sales:"))
+    #User enters inputs of test scores
+    FirstTest  = float(input("Enter the first Test score:"))
+    SecondTest  = float(input("Enter seconf test score :"))
+  
+    #Total is calculated
+    Total = FirstTest + SecondTest
+    
+    Avg = Total/2
 
-      # Commision = 20% of WeeklySales 
-      CommisionRate = .20
-      # HourlyPay = 16$ 
-      HourlyPay  = 16
-      #Commision is calculated
-      Commision  = CommisionRate * WeeklySales
-
-      #Totalpay is calculated
-      Totalpay  = NumHoursWorked * HourlyPay + Commision
-
-      #If Hours worked is 0 then you dont get commision or pay
-      if NumHoursWorked == 0:
-          Commision = 0
-          Totalpay = 0
-      #Total pay , hours worked, Vommision amount, are displayed to the user, also rounds to the 2nd decimal place
-      print('\nTotal hours worked is :',round(NumHoursWorked,2))
-      print('\nTotal commision is :',round(Commision,2))
-      print('\nTotal pay for the week is :', round(Totalpay,2))
-      
-      #asks user to restart the program
-      PlayAgain=str(input('\nDo you want to enter a new calculation, type Yes or No '))
-      #if user writes either no then it stops program
-      if PlayAgain == "No":
-        play = False
-      elif  PlayAgain == "NO":
-        play = False  
-      break
-
+    #Avg grade is displayed and rounded to the 2nd decimal
+    print('\n The avg grade is:', round(Avg,2))
+    break
     # If it fails this will be shown
-    except ValueError:
-       print("Enter a number, words are not allowed! Try again!")
+  except ValueError:
+    print("Enter a number, words are not allowed! Try again!")
 
    
 
