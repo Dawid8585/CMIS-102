@@ -18,7 +18,7 @@ while play:
     
 
       #User enters inputs of hours worked and sales #'s.
-      NumHoursWorked  = input()
+      NumHoursWorked  = float(input("Enter weekly sales:"))
       WeeklySales  = float(input("Enter weekly sales:"))
 
       # Commision = 20% of WeeklySales 
