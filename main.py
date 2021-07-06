@@ -1,33 +1,41 @@
+import random
 while True: 
   try:
     
 
+  #  Welcom message
+    print(" ARE YOU READY TO CREATE A CUSTOM POKEMON")
+  
+    # Input person name
+    FirstName  = str(input("\nEnter Your First Name:"))
+    MiddleName = str(input("\nEnter Your Middle Name. Enter NA for no middle name: "))
+    LastName  = str(input("\nEnter Your Last Name:"))
    
-    print("\n Ticket Prices are: \n Student Ticket: $25 \n Regular Ticket: $35 \n Senior Ticket is $20")
+    #if the user inputs NA or na then middle Name is 0 else its the length of the middle name
+    if MiddleName == "NA" or "na" or "Na":
+      MiddleName = ""
 
-    AgeClient  = int(input("\nEnter the age of person buying ticket:"))
-   
-    StudentTicket = 25
-    SeniorTicket = 20
-    RegularTicket = 35
+    #gets the level based on the input
+    Sec = len(FirstName) + len(LastName) + len(MiddleName)
+    first = len(FirstName) + len(LastName) 
+    Level = first + len(MiddleName)
+    # print("this is", Level)
+    # print("this is", first)
+    # print("this is", Sec)
+    #  List of pokemon Name
+    PokemonName = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander","Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie","Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate","Spearow", "Fearow", "Dragonite", "Mewtwo", "Mew"]
+    #List of pokemon type
+    PokemonType = ["Normal","Fire","Water","Grass","Electric","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dark","Dragon","Steel","Fairy"]   
 
-   
+    #prints out both outputs
+    print("Your Pokemon is",  random.choice(PokemonName) ,random.choice(PokemonType) ,"type")
+    print("Level:", Level)
 
-    if AgeClient < 18:
-      print("Individual can not purchase ticket")
-    elif AgeClient >= 18 and AgeClient <= 25:
-      print("Student ticket price is $", StudentTicket) 
-    elif AgeClient > 60:
-      print("Senior ticket price is $", SeniorTicket)
-    elif AgeClient >= 26 and AgeClient <= 60:
-      print("Regular ticket price is $", RegularTicket)
-   
-    
     break
 
     # If it fails this will be shown
   except ValueError:
-    print("Enter a number, words are not allowed! Try again!")
+    print("Enter a word, numbers are not allowed! Try again!")
 
    
 
