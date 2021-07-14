@@ -13,19 +13,23 @@ Choice = float(input("\nWhich grade would would you like to do: \n1:Money Saver:
 
 #sets up a function to do the math so I can call it later
 def Mathstuff():
-  #User chooses COS do that else go to the others that they choose
+  #Users choice is evaluated and ran
     if Choice == 1:
+      # total price is calculated for the carpet
       TtlPrice = CarpetArea * 2
+      #Total price is printed and round to the 2nd decimal point cause money.
       print("Total cost for a basic carpet installation for this room is", round(TtlPrice,2),"$") 
     elif Choice == 2:
+      # total price is calculated for the carpet
       TtlPrice = CarpetArea * 5.99
+      #Total price is printed and round to the 2nd decimal point cause money.
       print("Total cost for a basic carpet installation for this room is", round(TtlPrice,2),"$") 
     elif Choice == 3:
+      # total price is calculated for the carpet
       TtlPrice = CarpetArea * 94.99
+      #Total price is printed and round to the 2nd decimal point cause money.
       print("Total cost for a basic carpet installation for this room is", round(TtlPrice,2),"$")
     
-
-
-
+#Function is called to do the job
 Mathstuff()
 
