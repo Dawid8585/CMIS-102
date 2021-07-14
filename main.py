@@ -1,30 +1,29 @@
-# Post a Python program that accepts at least two values as input, performs some computation and displays at least one value as the result. The computation must involve calling one of the predefined functions in the math library. Include comments in your program that describe what the program does. Also post a screen shot of executing your program on at least one test case.
+# The third assignment involves writing a Python program to compute the cost of carpeting a room. Your program should prompt the user for the width and length in feet of the room and the quality of carpet to be used. A choice between three grades of carpeting should be given. You should decide on the price per square foot of the three grades on carpet. Your program must include a function that accepts the length, width, and carpet quality as parameters and returns the cost of carpeting that room. After calling that function, your program should then output the carpeting cost.
 
-# Be sure to choose a program different from any of the programs already posted by your classmates.
-import math
+
 # spice
-print("ITS CALCULATOR TIME")
-#input for which math should be done
-Choice = (input("which would would you like to do: \nCOS \nSIN \nTAN \nplease type one \n"))
-#input for X value
-Xvalue = int(input("Please enter a number: \n"))
+print("Cost of carpeting a room")
+#input for width and length should be done
+WidthC = float(input("What is the width of the room in feet: "))
+LengthC = float(input("\nWhat is the length of the room in feet: "))
+#total area of carpet
+CarpetArea = WidthC * LengthC
+#input for which grade should be done
+Choice = float(input("\nWhich grade would would you like to do: \n1:Money Saver: $2.00 sqft \n2:Basic: $5.99 sqft \n3:Bouje Badness: $94.99 sqft\nplease type 1 , 2 or 3 \n"))
 
 #sets up a function to do the math so I can call it later
 def Mathstuff():
   #User chooses COS do that else go to the others that they choose
-    if Choice == "COS":
-      #math import function is being used to get the value
-      Xcos = math.cos(Xvalue)
-      #prints the output
-      print("The COS of {} is {}".format(Xvalue,Xcos))
-    elif Choice == "TAN":
-      #math import function is being used to get the value  
-      Xtan = math.tan(Xvalue)
-      print("The TAN of {} is {}".format(Xvalue,Xtan))
-    elif Choice == "SIN":
-      #math import function is being used to get the value
-      Xsin = math.sin(Xvalue)
-      print("The SIN of {} is {}".format(Xvalue,Xsin))  
+    if Choice == 1:
+      TtlPrice = CarpetArea * 2
+      print("Total cost for a basic carpet installation for this room is", round(TtlPrice,2),"$") 
+    elif Choice == 2:
+      TtlPrice = CarpetArea * 5.99
+      print("Total cost for a basic carpet installation for this room is", round(TtlPrice,2),"$") 
+    elif Choice == 3:
+      TtlPrice = CarpetArea * 94.99
+      print("Total cost for a basic carpet installation for this room is", round(TtlPrice,2),"$")
+    
 
 
 
