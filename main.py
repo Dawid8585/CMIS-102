@@ -1,41 +1,32 @@
-import random
-while True: 
-  try:
-    
+# Post a Python program that accepts at least two values as input, performs some computation and displays at least one value as the result. The computation must involve calling one of the predefined functions in the math library. Include comments in your program that describe what the program does. Also post a screen shot of executing your program on at least one test case.
 
-  #  Welcom message
-    print(" ARE YOU READY TO CREATE A CUSTOM POKEMON")
-  
-    # Input person name
-    FirstName  = str(input("\nEnter Your First Name:"))
-    MiddleName = str(input("\nEnter Your Middle Name. Enter NA for no middle name: "))
-    LastName  = str(input("\nEnter Your Last Name:"))
-   
-    #if the user inputs NA or na then middle Name is 0 else its the length of the middle name
-    if MiddleName == "NA" or "na" or "Na":
-      MiddleName = ""
+# Be sure to choose a program different from any of the programs already posted by your classmates.
+import math
+# spice
+print("ITS CALCULATOR TIME")
+#input for which math should be done
+Choice = (input("which would would you like to do: \nCOS \nSIN \nTAN \nplease type one \n"))
+#input for X value
+Xvalue = int(input("Please enter a number: \n"))
 
-    #gets the level based on the input
-    Sec = len(FirstName) + len(LastName) + len(MiddleName)
-    first = len(FirstName) + len(LastName) 
-    Level = first + len(MiddleName)
-    # print("this is", Level)
-    # print("this is", first)
-    # print("this is", Sec)
-    #  List of pokemon Name
-    PokemonName = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander","Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie","Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate","Spearow", "Fearow", "Dragonite", "Mewtwo", "Mew"]
-    #List of pokemon type
-    PokemonType = ["Normal","Fire","Water","Grass","Electric","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dark","Dragon","Steel","Fairy"]   
+#sets up a function to do the math so I can call it later
+def Mathstuff():
+  #User chooses COS do that else go to the others that they choose
+    if Choice == "COS":
+      #math import function is being used to get the value
+      Xcos = math.cos(Xvalue)
+      #prints the output
+      print("The COS of {} is {}".format(Xvalue,Xcos))
+    elif Choice == "TAN":
+      #math import function is being used to get the value  
+      Xtan = math.tan(Xvalue)
+      print("The TAN of {} is {}".format(Xvalue,Xtan))
+    elif Choice == "SIN":
+      #math import function is being used to get the value
+      Xsin = math.sin(Xvalue)
+      print("The SIN of {} is {}".format(Xvalue,Xsin))  
 
-    #prints out both outputs
-    print("Your Pokemon is",  random.choice(PokemonName) ,random.choice(PokemonType) ,"type")
-    print("Level:", Level)
 
-    break
 
-    # If it fails this will be shown
-  except ValueError:
-    print("Enter a word, numbers are not allowed! Try again!")
-
-   
+Mathstuff()
 
