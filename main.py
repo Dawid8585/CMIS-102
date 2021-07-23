@@ -1,35 +1,42 @@
-# The fourth assignment involves writing a Python program to compute the average quiz grade
-# for a group of five students. Your program should include a list of five names.
-# Using a for loop, it should successively prompt the user for the quiz grade for
-# each of the five students. Each prompt should include the name of the student
-# whose quiz grade is to be input. It should compute and display the average of
-# those five grades and the highest grade. You should decide on the names of the five students.
+from time import sleep
 
-#does the avg calculation for the grades
-def Average(avggrade):
-    return sum(avggrade) / len(avggrade)
-#arrays ill need later in the program. Theyre currently blank
-num_array = list()
-avggrade = list()
-#inputs the number of students in the class
-Students = input("Enter how many Students you want:")
+print("THE MORTAL COMBAT")
 
-# runs untill the amount of students are inputed
-for i in range(int(Students)):
-    s = input("Enter Students name: ")
-    print("\nPlease Enter", s, "'s")
-    n = input("Grade: ")
-    #adds the student and their grade together
-    StudAndGrd = str(s) + " :" + str(n)
-    #adds into array
-    num_array.append(StudAndGrd)
-    #adds avg grade into array
-    avggrade.append(int(n))
-    #uses functions to get avg
-    average = Average(avggrade)
-    #uses max to get the highest grade
-    highest = max(avggrade)
-    #prints
-print("Students of the class with their grades \n", num_array)
-print("The average grade is", average)
-print("The best grade is", highest)
+#input if its a new game
+NewGame = input("is this a new game (Y/N)")
+#if its a new game get the character issubclass
+while NewGame == "Y" or NewGame == "y":
+  Name = input("Enter Name of Character ")
+  #is the characters name Uppercase or no
+  SpellingName = Name.islower()
+  if SpellingName == True:
+    #if characters name isnt uppercase than make the first letter uppercase
+    RealName = Name.title()
+  Class = input("What are you? Are you a \n1: MAGE \n2: POKEMON  \n3: DEMON\n ")
+  Level = 0;
+  Inventory = list()
+  break
+
+#story!
+print("\n*Dramatic Music playing*")
+#allows time between print statements 
+sleep(1)
+print("\nDUN DUN DUUUUUNNNN dun duuuuun DDDDUUUUN DUUUUN")
+sleep(6)
+print("You wake up from a long nap in a clearing by the woods. No further than half a days walk from your village")
+sleep(7)
+print("\nIts a beautiful day out")
+sleep(3)
+print("\nIn the distance you hear a buzz ")
+sleep(1)
+print("............ ")
+sleep(3)
+choice = input("What do you do (Run , Hide, Attack)")
+
+if choice == "Run" or choice == "RUN" or choice == "run":
+  #counts how many letters in the name and uses it for distance user runs
+  distances = len(Name)
+  print("You run and run and only manage to go", distances,"feet before it catches you up.")
+  sleep(2)
+  print("\nturning around you see it and ")
+  sleep(1)
