@@ -1,42 +1,28 @@
-from time import sleep
+# Develop a Python program that takes a user input of a sentence and then do the following:
+# Print the length of sentence and if it is over 25 character have then enter a shorter sentence.
+# Print the letters that are in the 2, 4 and 5 characters.
+# Replace any words that start with a “I”
+# Determine if the string is alphabetic or numeric
+# Capitalize the first letter of every word and print the results.
 
-print("THE MORTAL COMBAT")
 
-#input if its a new game
-NewGame = input("is this a new game (Y/N)")
-#if its a new game get the character issubclass
-while NewGame == "Y" or NewGame == "y":
-  Name = input("Enter Name of Character ")
-  #is the characters name Uppercase or no
-  SpellingName = Name.islower()
-  if SpellingName == True:
-    #if characters name isnt uppercase than make the first letter uppercase
-    RealName = Name.title()
-  Class = input("What are you? Are you a \n1: MAGE \n2: POKEMON  \n3: DEMON\n ")
-  Level = 0;
-  Inventory = list()
-  break
+userinput = input("enter a sentence")
+lenui = len(userinput)
+if lenui > 25:
+  print("try again with a shorter sentence")
+else:
+  print(lenui)
+  print(userinput[2],userinput[4],userinput[5])
 
-#story!
-print("\n*Dramatic Music playing*")
-#allows time between print statements 
-sleep(1)
-print("\nDUN DUN DUUUUUNNNN dun duuuuun DDDDUUUUN DUUUUN")
-sleep(6)
-print("You wake up from a long nap in a clearing by the woods. No further than half a days walk from your village")
-sleep(7)
-print("\nIts a beautiful day out")
-sleep(3)
-print("\nIn the distance you hear a buzz ")
-sleep(1)
-print("............ ")
-sleep(3)
-choice = input("What do you do (Run , Hide, Attack)")
+  this = userinput.replace("i","hello")
+  NoWordWithI = ' '.join([ word for word in userinput.split() if not word.startswith('i') ])
 
-if choice == "Run" or choice == "RUN" or choice == "run":
-  #counts how many letters in the name and uses it for distance user runs
-  distances = len(Name)
-  print("You run and run and only manage to go", distances,"feet before it catches you up.")
-  sleep(2)
-  print("\nturning around you see it and ")
-  sleep(1)
+  print(NoWordWithI)
+  print(this)
+
+  alpha = userinput.isalpha()
+  numer = userinput.isnumeric()
+  if alpha is True:
+    print("User input is alphabetisncjsd")
+  elif numer is True:
+    print("User input is 432432423 nhumbers")
