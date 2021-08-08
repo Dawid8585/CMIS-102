@@ -1,28 +1,30 @@
-# Develop a Python program that takes a user input of a sentence and then do the following:
-# Print the length of sentence and if it is over 25 character have then enter a shorter sentence.
-# Print the letters that are in the 2, 4 and 5 characters.
-# Replace any words that start with a “I”
-# Determine if the string is alphabetic or numeric
-# Capitalize the first letter of every word and print the results.
+# The sixth assignment involves writing a Python program to read in the temperatures, as user input, for ten consecutive days in Celsius and store them into an array. The entire array should then be displayed. Next each temperature in the array should be converted to Fahrenheit and the entire array should be again be displayed. The formula for converting Celsius to Fahrenheit is °F = (°C × 1.8) + 32. Finally, the number of cool, warm and hot days should be counted and the number of each type of days should be displayed. You should decide on the thresholds for determining whether a day is cool, warm or hot..
 
+#grabs the input of the number of days and sets default arrays and values
+NumInput = int(input("Number of days: "))
+CTemp = []
+FTemp =[]
+CDays = NumInput
+FDays = NumInput
 
-userinput = input("enter a sentence")
-lenui = len(userinput)
-if lenui > 25:
-  print("try again with a shorter sentence")
-else:
-  print(lenui)
-  print(userinput[2],userinput[4],userinput[5])
+#when the inputed days is equal or more than 1 as for the temp
+while NumInput >= 1:
+  intemp = int(input("What is temp in Celsius for day {}:  ".format(NumInput) ))
+  NumInput -= 1
+  #add the temp into the array
+  CTemp.append(intemp)
 
-  this = userinput.replace("i","hello")
-  NoWordWithI = ' '.join([ word for word in userinput.split() if not word.startswith('i') ])
+#do calc for turing Cel into Farn
+for x in CTemp:
+  FarT = (x * 1.8) + 32
+  FTemp.append(FarT)
+  
+#display Celcius and day 
+for x in CTemp:
+  print("The Celcius on day {} was: {}".format(CDays,x))
+  CDays -= 1
 
-  print(NoWordWithI)
-  print(this)
-
-  alpha = userinput.isalpha()
-  numer = userinput.isnumeric()
-  if alpha is True:
-    print("User input is alphabetisncjsd")
-  elif numer is True:
-    print("User input is 432432423 nhumbers")
+#display Fahrenheit and day 
+for x in FTemp:
+  print("The Fahrenheit on day {} was: {}".format(FDays,x))
+  FDays -= 1
